@@ -1,0 +1,318 @@
+%!TEX program = xelatex
+
+\documentclass[12pt,a4paper]{ctexart}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{mathrsfs, amsfonts, amsmath, amssymb}%
+\usepackage{enumerate}%
+\usepackage{analysis, algebra}%
+\usepackage{exampaper}%
+\usepackage{fancyhdr}%
+\usepackage{geometry}%
+\usepackage{ragged2e}%
+\usepackage{multirow}%
+%
+\geometry{left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm}%
+\pagestyle{fancy}%
+\cfoot{\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}}%
+
+\renewcommand{\headrulewidth}{0pt}%
+%
+\begin{document}%
+\normalsize%
+\begin{center}%
+\Large{\textbf{浙江工业大学之江学院第 2017/2018 学年\\第 2 学期试卷 I 答案}}%
+\end{center}%
+\begin{center}%
+课程\myline[5.8cm]~班级\myline[5.8cm]\\%
+姓名\myline[3.5cm]~学号\myline[3.5cm]~教师姓名\myline[3.5cm]%
+\end{center}%
+\begin{center}%
+\begin{tabular}{|c|c|c|c|c|c|}%
+\hline%
+\sws{题号}&\sws{一}&\sws{二}&\sws{三}&\sws{四}&\sws{总评}\\%
+\hline%
+\multirow{2}{*}{计分}&&&&&\\%
+&&&&&\\%
+\hline%
+\end{tabular}%
+\end{center}%
+\noindent 一、填空题 (每空 2 分, 共 20 分):%
+\begin{enumerate}[1)]%
+
+\item%
+$\begin{bmatrix}
+0 & x & 1 & 0\\
+y & 3 & 0 & 1\\
+0 & 2 & z & 0
+\end{bmatrix}
+$经初等变换$r_1\leftrightarrow r_2, r_1 + 2r_3$变成\autolenunderline{$\begin{bmatrix}
+y& 7& 2z & 0\\
+0& x& 1 &0 \\
+0& 2& z& 0 
+\end{bmatrix}$
+};%
+\item%
+设$A=\begin{bmatrix}
+x & 1 & x\\
+0 & y & 0
+\end{bmatrix}
+$, 当\autolenunderline{$y=0$或$x=0$}时$A$的秩为1, 否则$A$的秩为\autolenunderline{2}, $A$的秩一定不为\autolenunderline{0};%
+\item%
+设$A=\begin{bmatrix}
+x& 0 & 0 \\
+-y& x & 1 \\
+0 & 1 & z
+\end{bmatrix}
+$, 则$A^T=$\autolenunderline{$\begin{bmatrix}
+x&-y&0\\
+0&x&1\\
+0&1& z
+\end{bmatrix}$
+}, $A$是对称矩阵当且仅当\autolenunderline{$y=0$};%
+\item%
+设行列式$\begin{vmatrix}
+x & 1 & 1 \\
+1 & x & -1 \\
+2 & -1 & 1
+\end{vmatrix}
+=0$, 则$x=$\autolenunderline{-1} 或\autolenunderline{4};%
+
+\item%
+设矩阵$A=\begin{bmatrix}
+1 & 1 & 0\\
+0 & 1 & 1
+\end{bmatrix}
+$, 则$A^TA=$\autolenunderline{$\begin{bmatrix}
+1&1&0 \\
+1&2&1 \\
+0&1& 1
+\end{bmatrix}$
+}, $AA^T=$\autolenunderline{$\begin{bmatrix}
+2&1\\
+1&2
+\end{bmatrix}$
+};%
+\end{enumerate}%
+
+
+%
+\noindent 二、判断题 (每空 2 分, 共 10 分):%
+\begin{enumerate}[1)]%
+\item%
+第三类初等行（列）变换不会改变矩阵的行列式;~~\true%
+\item%
+$n$行列式最多有$n^2$个求和项;~~\false%
+\item%
+分块矩阵乘积的最终结果和如何分块（包括不分块, 只要分块方案可行）是无关的;~~\true%
+\item%
+线性代数在数学内部、自然科学、社会科学、生产生活方方面面都有广泛应用;~~\true%
+\item%
+矩阵乘积的行列式是行列式的乘积, 即$|AB|=|A||B|$;~~\true%
+\end{enumerate}%
+
+
+%
+\noindent 三、选择题 (每空 2 分, 共 10 分):%
+\begin{enumerate}[1)]%
+\item%
+下面哪些问题可以用初等变换做;~~\mypar{D}\\
+(A) 求出标准型~~(B) 求行列式~~(C) 解线性方程组~~(D) 以上都是%
+\item%
+初等变换可能改变矩阵的什么;~~\mypar{A}\\
+(A) 行列式~~(B) 标准型~~(C) 秩~~(D) 可逆性%
+\item%
+下面哪个关于矩阵的比喻比较贴切;~~\mypar{B}\\
+(A) 一幅素描~~(B) 一张Excel表单~~(C) 俄罗斯方块~~(D) 9宫格%
+\item%
+3阶行列式展开一共几个求和项;~~\mypar{B}\\
+(A) 3~~(B) 6~~(C) 9~~(D) 12%
+\item%
+下面哪种行列式可能不为0;~~\mypar{C}\\
+(A) 0行列式~~(B) 有0行（列）~~(C) 对角行列式~~(D) 某一行（列）是另一行（列）的常数倍%
+\end{enumerate}%
+
+
+%
+\noindent 四、计算题 (每题 10 分, 共 60 分):%
+\begin{enumerate}[1)]%
+\item%
+计算行列式$\begin{vmatrix}%
+-6&-3&5\\%
+6&-5&5\\%
+2&-4&5%
+\end{vmatrix}$.
+
+\begin{solve}%
+计算如下:\\
+$19$%
+\end{solve}%
+\item%
+计算$-1\begin{bmatrix}
+-3 & -1 & 1\\
+2 & 3 & -4\\
+2 & -1 & 4
+\end{bmatrix} -1\begin{bmatrix}
+-2 & -4 & -2\\
+-3 & 0 & -2\\
+4 & -3 & 4
+\end{bmatrix}$.
+
+\begin{solve}%
+计算如下:\\
+$\begin{bmatrix}
+3 & 1 & -1\\
+-2 & -3 & 4\\
+-2 & 1 & -4
+\end{bmatrix}+\begin{bmatrix}
+2 & 4 & 2\\
+3 & 0 & 2\\
+-4 & 3 & -4
+\end{bmatrix}=\begin{bmatrix}
+5 & 5 & 1\\
+1 & -3 & 6\\
+-6 & 4 & -8
+\end{bmatrix}.$%
+\end{solve}%
+\item%
+计算$\begin{bmatrix}
+3 & 1 & 2 & 1\\
+-2 & 4 & 4 & 3
+\end{bmatrix}\begin{bmatrix}
+1 & -3 & 1\\
+1 & -1 & 4\\
+1 & 1 & 1\\
+4 & 3 & -3
+\end{bmatrix}$.
+
+\begin{solve}%
+计算如下:\\
+$\begin{bmatrix}
+3 & 1 & 2 & 1\\
+-2 & 4 & 4 & 3
+\end{bmatrix}\begin{bmatrix}
+1 & -3 & 1\\
+1 & -1 & 4\\
+1 & 1 & 1\\
+4 & 3 & -3
+\end{bmatrix}=\begin{bmatrix}
+10 & -5 & 6\\
+18 & 15 & 9
+\end{bmatrix}$%
+\end{solve}%
+\item%
+用分块矩阵的方法计算$\begin{bmatrix}
+-3 & 4 & 3 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+0 & -5\\
+0 & -2\\
+-4 & -1\\
+0 & 0
+\end{bmatrix}$. (用线条注明分块方案)
+
+\begin{solve}%
+计算如下:\\
+$\begin{bmatrix}
+-3 & 4 & 3 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+0 & -5\\
+0 & -2\\
+-4 & -1\\
+0 & 0
+\end{bmatrix}=\begin{bmatrix}
+-12 & 4\\
+0 & 0\\
+0 & 0
+\end{bmatrix}$%
+\end{solve}%
+\item%
+用初等变换将矩阵$\begin{bmatrix}
+-4 & 0 & -4 & 20\\
+-1 & -3 & 14 & -4\\
+-2 & 2 & -10 & 10
+\end{bmatrix}$变成标准型.
+
+\begin{solve}%
+初等变换过程如下:
+消元过程:$\xrightarrow{1/-4 * r_1}\begin{bmatrix}
+1 & 0 & 1 & -5\\
+-1 & -3 & 14 & -4\\
+-2 & 2 & -10 & 10
+\end{bmatrix}\xrightarrow{r_2 --1*r_1}\xrightarrow{r_3 --2*r_1}\begin{bmatrix}
+1 & 0 & 1 & -5\\
+0 & -3 & 15 & -9\\
+0 & 2 & -8 & 0
+\end{bmatrix}\xrightarrow{1/-3 * r_2}\begin{bmatrix}
+1 & 0 & 1 & -5\\
+0 & 1 & -5 & 3\\
+0 & 2 & -8 & 0
+\end{bmatrix}\xrightarrow{r_3 -2*r_2}\begin{bmatrix}
+1 & 0 & 1 & -5\\
+0 & 1 & -5 & 3\\
+0 & 0 & 2 & -6
+\end{bmatrix}\xrightarrow{1/2 * r_3}\begin{bmatrix}
+1 & 0 & 1 & -5\\
+0 & 1 & -5 & 3\\
+0 & 0 & 1 & -3
+\end{bmatrix}$
+
+回代过程:$\xrightarrow{r_1 - 1*r_3}\xrightarrow{r_2 - -5*r_3}\begin{bmatrix}
+1 & 0 & 0 & -2\\
+0 & 1 & 0 & -12\\
+0 & 0 & 1 & -3
+\end{bmatrix}\begin{bmatrix}
+1 & 0 & 0 & -2\\
+0 & 1 & 0 & -12\\
+0 & 0 & 1 & -3
+\end{bmatrix}$%
+\end{solve}%
+\item%
+求解线性方程组$\left\{\begin{array}{rl}
+- x_{1} + 5x_{2} + 4x_{3}& =2 \\
+- 2x_{1} + 7x_{2} + 17x_{3}& =3 \\
+- 3x_{1} + 15x_{2} + 14x_{3}& =-1 \\
+\end{array}\right.$.
+
+\begin{solve}%
+初等变换过程如下:
+消元过程:$\xrightarrow{1/-1 * r_1}\begin{bmatrix}
+1 & -5 & -4 & -2\\
+-2 & 7 & 17 & 3\\
+-3 & 15 & 14 & -1
+\end{bmatrix}\xrightarrow{r_2 --2*r_1}\xrightarrow{r_3 --3*r_1}\begin{bmatrix}
+1 & -5 & -4 & -2\\
+0 & -3 & 9 & -1\\
+0 & 0 & 2 & -7
+\end{bmatrix}\xrightarrow{1/-3 * r_2}\begin{bmatrix}
+1 & -5 & -4 & -2\\
+0 & 1 & -3 & 1/3\\
+0 & 0 & 2 & -7
+\end{bmatrix}\begin{bmatrix}
+1 & -5 & -4 & -2\\
+0 & 1 & -3 & 1/3\\
+0 & 0 & 2 & -7
+\end{bmatrix}\xrightarrow{1/2 * r_3}\begin{bmatrix}
+1 & -5 & -4 & -2\\
+0 & 1 & -3 & 1/3\\
+0 & 0 & 1 & -7/2
+\end{bmatrix}$
+
+回代过程:$\xrightarrow{r_1 - -4*r_3}\xrightarrow{r_2 - -3*r_3}\begin{bmatrix}
+1 & -5 & 0 & -16\\
+0 & 1 & 0 & -61/6\\
+0 & 0 & 1 & -7/2
+\end{bmatrix}\xrightarrow{r_1 - -5*r_2}\begin{bmatrix}
+1 & 0 & 0 & -401/6\\
+0 & 1 & 0 & -61/6\\
+0 & 0 & 1 & -7/2
+\end{bmatrix}$答：方程组的解为$x = {{answer}}$.%
+\end{solve}%
+\end{enumerate}%
+\end{document}
