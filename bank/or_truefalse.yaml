@@ -1,0 +1,56 @@
+item1:
+  parameter: {true_false: true}
+  realm: linear programming
+  template: "解中含非零人工变量意味着线性规划无可行解;"
+item10:
+  parameter: {true_false: false}
+  realm: simplex method
+  template: "单纯形法中为确定换入变量在检验数行选择最大正数是必须的;"
+item11:
+  parameter: {true_false: true}
+  realm: decision theory
+  template: "消消乐、连连看和俄罗斯方块等游戏都是典型的动态规划 (忽略随机性);"
+item12:
+  parameter: {true_false: true}
+  realm: nonlinear programming
+  template: "凸函数的局部最优点一定是全局最优点;"
+item13:
+  parameter: {strategy: "混合策略"}
+  realm: game theory
+  template: "任意矩阵对策一定有{{strategy}}意义下的解;"
+item14:
+  parameter: {true_false: false}
+  realm: decision theory
+  template: "悲观准则和对策论计算最优纯策略的公式是一样的，因此是最理性的决策准则;"
+item2:
+  parameter: {true_false: false}
+  realm: nonlinear programming
+  template: "(极值点两边严格单调的)单峰函数一定是凸函数;"
+item3:
+  parameter: {true_false: true}
+  realm: nonlinear programming
+  template: "梯度法(最速下降法)无法克服陷入局部极小点的缺陷;"
+item4:
+  parameter: {true_false: true}
+  realm: linear programming
+  template: "任何线性规划问题都有对偶问题;"
+item5:
+  parameter: {true_false: false}
+  realm: game theory
+  template: "任意矩阵对策一定有纯策略意义下的解, 也有混合策略意义下的解;"
+item6:
+  parameter: {true_false: true}
+  realm: simplex method
+  template: "加上大 M 法和两阶段法，单纯形法是可以解决所有线性规划问题的;"
+item7:
+  parameter: {true_false: true}
+  realm: nonlinear programming
+  template: "Newton 法改善了收敛速度，但依然无法克服陷入局部极小点的缺陷;"
+item8:
+  parameter: {true_false: false}
+  realm: linear programming
+  template: "任何线性规划问题都有等价地标准形式;"
+item9:
+  parameter: {true_false: false}
+  realm: simplex method
+  template: "对偶单纯形法中为确定换入变量在$b$列选择最小负数是必须的;"

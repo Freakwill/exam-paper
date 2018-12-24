@@ -1,0 +1,53 @@
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: "Python 比 C、Java 容易学;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: "学习 Python 是一件非常快乐，非常有成就感的事情;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: "学习 Python 的学生比不学习的更有可能获得幸福和快感，也更长寿;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: structured
+  template: "Python 有 case 语句;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: Python
+  template: "人们再也不可能设计出比 Python 更完美的计算机语言了;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: Python
+  template: "Python 等计算机语言是舶来品，学习它会破坏社会主义国家的社会风气;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: structured
+  template: "Python 有 goto 语句;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: structured
+  template: "Python 的 for/while 循环语句和 if 语句一样可以接 else;"
+- !!python/object:exam.TrueFalseProblem
+  answer: false
+  realm: structured
+  template: "Python 有 do-while 语句;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: "Python 是一种动态类型面向对象的过程式解释型语言;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: "Python 运行速度比较慢，但开发效率高;"
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: Python
+  template: |
+    Python 真正实现了"万物皆对象"的程序设计理念;
+- !!python/object:exam.TrueFalseProblem
+  answer: true
+  realm: grammar
+  template: 对 Python 来说，缩进具有语法功能;

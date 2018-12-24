@@ -1,0 +1,61 @@
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: Hello World, B: Hello Kitty, C: Hello Kugou, D: 你好世界}
+  answer: A
+  realm: programming
+  template: 学习编程的第一个命令是？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 元组, B: 字典, C: 列表, D: 集合}
+  answer: B
+  realm: type
+  template: 存储个人信息时，最适合采用什么数据类型？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 一只袋鼠, B: 一只企鹅, C: 一只章鱼, D: 一条蟒蛇}
+  answer: D
+  realm: Python
+  template: Python 的吉祥物是;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 内心迷茫的时候, B: 在实验室里专研, C: 度假时候无聊打发时间, D: 泡咖啡馆奇思妙想}
+  answer: C
+  realm: Python
+  template: Python发明人是在什么情况下发明Python的？
+
+- !!python/object:exam.ChoiceProblem
+  options: {A: 直接退出程序, B: 关机, C: 拔电源, D: 关闭文件对象}
+  answer: D
+  realm: file
+  template: 文件操作完毕后，应该;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: 征服宇宙, B: 侵入FBI, C: 设计程序，造福人类, D: 挣钱养家}
+  answer: C
+  realm: Python
+  template: 精通Python后，最哪件事情最高尚？
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: break, B: continue, C: return, D: goto}
+  answer: D
+  realm: structured
+  template: 下面哪个起到流程控制作用的关键词不是Python的关键词;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: def, B: func, C: class, D: function}
+  answer: A
+  realm: function
+  template: 下面哪个是Python创建函数的关键词;
+
+- !!python/object:exam.ChoiceProblem
+  parameter: {}
+  options: {A: def, B: classdef, C: class, D: cls}
+  answer: C
+  realm: oop
+  template: 下面哪个是Python创建类的关键词;

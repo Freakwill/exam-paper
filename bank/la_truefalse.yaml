@@ -1,0 +1,154 @@
+
+# title: true or false problem for linear algebra
+# description: >
+#   A database where the problems are stored,
+#   that will be selected randomly.
+
+item1:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 只要三角矩阵的某个对角线元素为0, 则它的行列式等于0;
+
+item2:
+  parameter: {}
+  answer: false
+  realm: linear algebra
+  template: 矩阵乘法可定义在任何两个矩阵上;
+
+item3:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 上（下）三角矩阵在矩阵乘法下是封闭的 (若干上（下）三角矩阵的乘积是上（下）三角矩阵);
+
+item4:
+  parameter: {}
+  answer: false
+  realm: linear algebra
+  template: 矩阵乘法有结合律和交换律;
+
+item5:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 矩阵是一种特殊的向量, 具备向量的所有性质和运算;
+
+item6:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 线性代数在数学内部、自然科学、社会科学、生产生活方方面面都有广泛应用;
+
+item7:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: "除了给出矩阵的标准型, 初等变换可以用来解决各种问题: 计算行列式、计算秩、解线性方程组、求逆矩阵;"
+
+item8:
+  parameter: {property: 可逆}
+  answer: true
+  realm: linear algebra
+  template: 任何{{property}}矩阵都可以写成初等矩阵的乘积;
+
+item9:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 矩阵（形状固定）的标准型个数是有限的;
+
+item10:
+  parameter: {}
+  answer: false
+  realm: linear algebra
+  template: 初等变换不会改变矩阵的行列式;
+
+item11:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 第三类初等行（列）变换不会改变矩阵的行列式;
+
+item12:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 排列中任意两个数互换会导致奇偶性转换;
+
+item13:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 初等变换不会改变矩阵的秩;
+
+item14:
+  parameter: {}
+  answer: false
+  realm: linear algebra
+  template: 将排列中最后一个数单独移动到首位一定会导致奇偶性转换;
+
+item15:
+  parameter: {}
+  answer: false
+  realm: linear algebra
+  template: 第一类初等行（列）变换改变也可能不改变矩阵的行列式;
+
+item16:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 一个矩阵的标准型是唯一的;
+
+
+item17:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 分块矩阵的乘积除了满足矩阵乘法的条件, 还需保证内部子矩阵在相乘时满足矩阵乘法条件;
+
+item18:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 矩阵乘法是矩阵最大的特点, 使它有别于一般向量;
+
+
+# item19:
+#   parameter: {}
+#   answer: true
+#   realm: linear algebra
+#   template: 每个矩阵与向量的线性变换对应;
+
+
+item19:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 矩阵的出现大大简化了线性方程组的表示;
+
+
+item20:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 分块矩阵乘积的最终结果和如何分块（包括不分块, 只要分块方案可行）是无关的;
+
+
+item21:
+  parameter: {number: n^2}
+  answer: false
+  realm: linear algebra
+  template: $n$行列式最多有${{number}}$个求和项;
+
+item22:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 矩阵乘积的行列式是行列式的乘积, 即$|AB|=|A||B|$;
+
+item23:
+  parameter: {}
+  answer: true
+  realm: linear algebra
+  template: 转置不会改变矩阵的行列式;

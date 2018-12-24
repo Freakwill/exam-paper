@@ -1,0 +1,59 @@
+- !!python/object:exam.FillProblem
+  answer: {motto: "人生苦短"}
+  realm: Python
+  template: "Python 的格言是 {{motto}}, 我用 Python;"
+- !!python/object:exam.FillProblem
+  answer: {int: "int", float: "float", str: "str"}
+  realm: type
+  template: "写出至少三种内建类型: {{int}}、{{float}}、{{str}};"
+- !!python/object:exam.FillProblem
+  answer: {type: 'dict'}
+  realm: type
+  template: "C 语言中的结构体类似于 Python 中的${{type}}$类型;"
+- !!python/object:exam.FillProblem
+  answer: {mascot: "python"}
+  realm: Python
+  template: "Python 的吉祥物是{{mascot}};"
+- !!python/object:exam.FillProblem
+  answer: {type: "二进制", write: "wb", read: "rd"}
+  realm: file
+  template: "视频和图像属于{{type}}文件，用{{write}}方法写入（保存或另存为），用{{read}}方法读取;"
+- !!python/object:exam.FillProblem
+  answer: {ext: ".py"}
+  realm: file
+  template: "Python脚本文件后缀是{{ext}};"
+- !!python/object:exam.FillProblem
+  answer: {style: "pythonic"}
+  realm: Python
+  template: "说程序设计体现 Python 简洁明了的风格的形容词是{{style}};"
+- !!python/object:exam.FillProblem
+  answer: {idle: "idle", pycharm: "PyCharm"}
+  realm: Python
+  template: "Python 内置丑了吧唧的 IDE 是{{idle}}; 公认最好的 IDE 是 {{pycharm}}."
+- !!python/object:exam.FillProblem
+  answer: {keword: "import", third: "第三方库"}
+  parameter: {dream: "克服地心引力跨越大海飞向太空"}
+  realm: Python
+  template: |
+    你要{{dream}}，为了实现这个梦想，你首先要下载具有该功能的{{third}} (如"antigravity"或者"flyhigh"), 然后在 Python 的脚本文件中使用{{keyword}}关键字导入;
+- !!python/object:exam.FillProblem
+  answer: {doctrine: "万事万物都是对象"}
+  realm: OOP
+  template: "面向对象编程的最高哲学是 {{doctrine}};"
+- !!python/object:exam.FillProblem
+  answer: {break: "break", continue: "continue"}
+  realm: structured
+  template: "循环语句中，Python 的控制命令有: {{break}}、{{continue}};"
+- !!python/object:exam.FillProblem
+  answer: {requtests: "requests", bs4: "bs4"}
+  realm: web
+  template: "Python 网络编程堪称绝配的两个第三方库: {{requests}}、{{bs4}};"
+- !!python/object:exam.FillProblem
+  answer: {close: "close"}
+  realm: file
+  template: "文件操作结束时候要执行{{close}}命令;"
+
+- !!python/object:exam.FillProblem
+  answer: {with: "with"}
+  realm: file
+  template: "创建文件对象的常用语法糖是{{with}}语句;"

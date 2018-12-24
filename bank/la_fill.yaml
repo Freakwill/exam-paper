@@ -1,0 +1,152 @@
+item1:
+  parameter: {}
+  answer: 
+    column: 列数
+    row: 行数
+  realm: matrix
+  template: 矩阵乘法$AB$需保证$A$的{{column}}和$B$的{{row}}相等;
+
+item2:
+  parameter: {k: 4, n: 3}
+  answer:
+    result: |
+      $\begin{bmatrix}
+      1& 12\\
+      0& 1
+      \end{bmatrix}$
+  realm: matrix
+  template: |
+    计算矩阵幂运算$\begin{bmatrix}
+    1& {{k}}\\
+    0& 1
+    \end{bmatrix}^{{n}}=${{result}};
+
+item3:
+  parameter: {permutation: 5742631}
+  answer:
+    result: 0
+    even_odd: 偶
+  realm: determinant
+  template: 排列{{permutation}}的逆序数为{{result}}, 是{{even_odd}}排列;
+
+item4:
+  parameter:
+    matrix: |
+      \begin{bmatrix}
+      1& 0 & 0 \\
+       0 & 0 & 0 \\
+      x & 1 & y
+      \end{bmatrix}
+  answer:
+    rank: 2
+  realm: matrix
+  template: 无论$x,y$取何值, 矩阵${{matrix}}$的秩为{{rank}};
+
+
+item5:
+  parameter:
+    matrix: |
+      \begin{bmatrix}
+      x& 0 & 0 \\
+      -y& x & 1 \\
+      0 & 1 & z
+      \end{bmatrix}
+  answer:
+    determinant:
+      $x(xz-1)$
+    transpose: |
+      $\begin{bmatrix}
+      x&-y&0\\
+      0&x&1\\
+      0&1& z
+      \end{bmatrix}$
+    condition: $y=0$
+  template: 设$A={{matrix}}$, 则 $|A|=${{determinant}}, $A^T=${{transpose}}, $A$是对称矩阵当且仅当{{condition}};
+
+item6:
+  parameter:
+    matrix: |
+      \begin{bmatrix}
+      x & 1 & 1\\
+      0 & y & 0
+      \end{bmatrix}
+  answer:
+    condition: $y=0$
+    rank: 2
+    rank0: 0
+  template: 设$A={{matrix}}$, 当{{condition}}时$A$的秩为1, 否则$A$的秩为{{rank}}, $A$的秩一定不为{{rank0}};
+
+item7:
+  parameter:
+    matrix: |
+      \begin{bmatrix}
+      1 & 1 & 0\\
+      0 & 1 & 1
+      \end{bmatrix}
+  answer:
+    matrix1: |
+      $\begin{bmatrix}
+      1&1&0 \\
+      1&2&1 \\
+      0&1& 1
+      \end{bmatrix}$
+    matrix2: |
+      $\begin{bmatrix}
+      2&1\\
+      1&2
+      \end{bmatrix}$
+  template: 设矩阵$A={{matrix}}$, 则$A^TA=${{matrix1}}, $AA^T=${{matrix2}};
+
+item8:
+  parameter:
+    determinant: |
+      \begin{vmatrix}
+      x & 1 & 1 \\
+      1 & x & -1 \\
+      2 & -1 & 1
+      \end{vmatrix}
+  answer:
+    det1: -1
+    det2: 4
+  template: 设行列式${{determinant}}=0$, 则$x=${{det1}} 或{{det2}};
+
+item9:
+  parameter:
+    matrix: |
+      \begin{bmatrix}
+      0 & x & 1 & 0\\
+      y & 3 & 0 & 1\\
+      0 & 2 & z & 0
+      \end{bmatrix}
+  answer: 
+    new: |
+      $\begin{bmatrix}
+      y& 7& 2z & 0\\
+      0& x& 1 &0 \\
+      0& 2& z& 0 
+      \end{bmatrix}$
+  template: ${{matrix}}$经初等变换$r_1\leftrightarrow r_2, r_1 + 2r_3$变成{{new}};
+
+item10:
+  parameter: 
+    determinant: |
+      \begin{vmatrix}
+      -2 & 2 & -3 & 1\\
+      -3 & y & x & z\\
+      4 & 4 & -4 & 2\\
+      1 & 2 & 2 & 0
+      \end{vmatrix}
+  answer:
+    m: |
+      $\begin{vmatrix}
+      -2&-3 &1 \\
+      -3 & x & z\\
+      1&2&0
+      \end{vmatrix}$
+    a: |
+      $-\begin{vmatrix}
+      -2&-3 &1 \\
+      -3 & x & z\\
+      1&2&0
+      \end{vmatrix}$
+  template: 行列式${{determinant}}$关于$a_{32}$的余子式$M_{32}=${{m}}, 对应的代数余子式$A_{32}=${{a}};

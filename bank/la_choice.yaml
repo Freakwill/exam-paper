@@ -1,0 +1,131 @@
+# item1:
+#   parameter: {}
+#   options: {A: 学习线性代数, B: 谈恋爱, C: 化妆（打篮球）, D: 看电影}
+#   answer: A
+#   realm: none
+#   template: 作为大学生来, 你觉得下面哪件事情最有意义;
+
+item1:
+  parameter: {}
+  options: {A: 求出标准型, B: 求行列式, C: 解线性方程组, D: 以上都是}
+  answer: D
+  realm: matrix
+  template: 下面哪些问题可以用初等变换做;
+
+
+item2:
+  parameter: {}
+  options: {A: $3r_2$, B: $r_1\leftrightarrow r_3$, C: $0r_2$, D: "$r_1+4r_2$"}
+  answer: C
+  realm: matrix
+  template: 下面那个初等变换是错误的;
+
+item3:
+  parameter: {}
+  options: {A: 自然科学, B: 社会科学, C: 数学自身, D: 以上都是}
+  answer: D
+  realm: none
+  template: 作为数学的基本分支, 线性代数（可）被应用于哪些场合或领域;
+
+item4:
+  parameter: {}
+  options: {A: 行列式, B: 标准型, C: 秩, D: 可逆性}
+  answer: A
+  realm: matrix
+  template: 初等变换可能改变矩阵的什么;
+
+# item4:
+#   parameter: {}
+#   options: {A: ..., B: ..., C: ..., D: ...}
+#   answer: A
+#   realm: algebra
+#   template: 下面哪组分块矩阵的分发是正确的;
+
+
+item5:
+  parameter: {}
+  options: {A: 矩阵, B: 行列式, C: 向量, D: 积分}
+  answer: D
+  realm: algebra
+  template: 下面哪个概念不是线性代数的;
+
+item6:
+  parameter:
+    determinant: |
+      \begin{vmatrix}
+      k-1 & 4\\
+      2& k-3
+      \end{vmatrix}
+  options: {A: $k=-1$, B: $k=5$, C: $k\neq -1$且$k\neq 5$, D: $k=-1$或$k=5$}
+  answer: D
+  realm: algebra
+  template: 行列式${{determinant}}=0$的充要条件是;
+
+item7:
+  parameter: {}
+  options: {A: 0行列式, B: 有0行（列）, C: 对角行列式, D: 某一行（列）是另一行（列）的常数倍}
+  answer: C
+  realm: determinant
+  template: 下面哪种行列式可能不为0;
+
+item8:
+  parameter: {}
+  options: {A: 矩阵乘法运算, B: 函数复合运算, C: 矩阵加法运算, D: A和B}
+  answer: D
+  realm: matrix
+  template: 下面哪中运算只有结合律没有交换律;
+
+
+item9:
+  parameter: {}
+  options: {A: 结合律, B: 交换律, C: 分配律, D: 存在乘法单位元}
+  answer: A
+  realm: matrix
+  template: 下面哪个不是矩阵乘法的性质;
+
+
+item10:
+  parameter: {}
+  options: {A: 3, B: 6, C: 9, D: 12}
+  answer: B
+  realm: determinant
+  template: 3阶行列式展开一共几个求和项;
+
+
+item11:
+  parameter: {}
+  options: {A: 子矩阵形状不限, B: 子矩阵必须有形状上的限制但不必都是方阵, C: 子矩阵必须都是方阵, D: 对角线上的子矩阵必须是方阵}
+  answer: B
+  realm: determinant
+  template: 关于分块矩阵, 下面那种说法正确
+
+
+item12:
+  parameter: {}
+  options: {A: 一幅素描, B: 一张Excel表单, C: 俄罗斯方块, D: 9宫格}
+  answer: B
+  realm: determinant
+  template: 下面哪个关于矩阵的比喻比较贴切;
+
+item13:
+  parameter: {}
+  options: {A: 植飞行棋, B: 消消乐, C: 汉诺塔, D: 五子棋}
+  answer: C
+  realm: determinant
+  template: 哪个游戏被用于形容求标准型的初等变换过程体现出的递归思想;
+
+
+item14:
+  parameter: {}
+  options: {A: 所有行（列）指标$i_k (j_k)$不重复, B: 该项对应的符号一定为负号, C: 行（列）指标可能重复, D: 任意一对指标$i_k\neq j_k$}
+  answer: A
+  realm: determinant
+  template: 
+    设$a_{i_1j_1}a_{i_2j_2}\cdots a_{i_nj_n}$是行列式的求和项, 则下列哪种说法正确;
+
+item15:
+  parameter: {}
+  options: {A: 条形码和二维码, B: 理论与实践, C: 个人与社会, D: 学生与老师}
+  answer: A
+  realm: determinant
+  template: 下面哪种关系可以作为向量和矩阵之间的关系的类比;
