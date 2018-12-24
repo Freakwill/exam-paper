@@ -1,12 +1,13 @@
-# -*- coding: utf-8 -*-
-'''myfile.exam
+#!/usr/bin/env python3
+
+r"""myfile.exam
 
 To edit examination paper
 
 -------------------------------
 Path: examsystem\exam.py
 Author: William/2016-01-02
-'''
+"""
 
 import collections
 import pathlib
@@ -24,7 +25,7 @@ import pylatex_ext
 from base import *
 
  
-class Solve(pylatex_ext.MyEnvironment):
+class Solve(Environment):
     '''solve environment
     Solve(data='the solution')
     '''
@@ -36,9 +37,11 @@ class ExamPaper(pylatex_ext.XeDocument):
     '''ExamPaper < Document
     '''
     def __init__(self, subject='', title=None, *args, **kwargs):
-        '''subject: str, the name of the subject of the examination;
-        title will be given automaticly
-        '''
+        """
+        Argument:
+            subject: str, the name of the subject of the examination;
+            title: str, will be given automaticly
+        """
         super(ExamPaper, self).__init__(documentclass='ctexart', document_options='12pt,a4paper', *args, **kwargs)
         self.latex_name = 'document'
         self.escape = False
@@ -55,10 +58,10 @@ class ExamPaper(pylatex_ext.XeDocument):
 
         self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
         self.preamble.append(Command('pagestyle', 'fancy'))
+        self.preamble.append(Command('chead', NoEscape(Command('textbf', '浙 江 工 业 大 学 之 江 学 院 考 试 命 题 纸').dumps())))
         self.preamble.append(Command('cfoot', NoEscape(r'\footnotesize{第~\thepage~页~(共~\pageref{LastPage}~页)}')))
-        self.preamble.append(Command('renewcommand', arguments=Arguments(NoEscape('\headrulewidth'), '0pt')))
+        self.preamble.append(Command('renewcommand', arguments=Arguments(NoEscape(r'\headrulewidth'), '0pt')))
 
-        
         # header = PageStyle("header")      
         # with header.create(Foot("C")):
         #     ft = Command('footnotesize', arguments=NoEscape('第~\\thepage~页~(共~\pageref{LastPage}~页)'))
@@ -85,7 +88,8 @@ class ExamPaper(pylatex_ext.XeDocument):
 
     def make_head(self):
         self.append(Center(data=pylatex_ext.large(bold(NoEscape(self.title)))))
-        self.append(Center(data=[NoEscape('课程\myline[5.8cm]~班级\myline[5.8cm]\\\\'), NoEscape('姓名\myline[3.5cm]~学号\myline[3.5cm]~教师姓名\myline[3.5cm]')]))
+        self.append(Command('noindent'))
+        self.append(r'二级学院：\hspace{6cm}专业名称：\hspace{6cm}\\课程名称：\hspace{6cm}课程代码：\hspace{6cm}\\主讲教师：\hspace{6cm}')
 
         table = Tabular('|c|c|c|c|c|c|')
         table.escape = False
@@ -96,6 +100,7 @@ class ExamPaper(pylatex_ext.XeDocument):
         table.add_empty_row()
         table.add_hline()
         self.append(Center(data=table))
+        self.append(Command('thispagestyle', 'plain'))
 
     def make_fill(self):
         # make filling problems
@@ -164,13 +169,13 @@ class Problem(BaseTemplate):
 
 
 class Solution(BaseTemplate):
-    '''Solution class
+    """Solution class
     
     solution of a problem
     
     Extends:
         BaseTemplate
-    '''
+    """
 
     @classmethod
     def fromProblem(cls, problem):
@@ -209,71 +214,60 @@ class OtherProblem(Problem):
                 self[k] = self.mask
         return super(OtherProblem, self).totex()
 
-    @classmethod
-    def random(cls, n, *args, **kwargs):
-        # read n problems from json file (randomly)
-        problems = OtherProblem.read(*args, **kwargs)
-        problems = list(problems.values())
+    def __setstate__(self, state):
+        self.template, self.parameter, answer = state['template'] + '~~{{answer}}', state.get('parameter', {}), state['answer']
+        self.solution = None
+
+    @staticmethod
+    def random(filename='', n=1, encoding='utf-8', *args, **kwargs):
+        # read n problems from yaml files (randomly)
+        filename = (BANK_FOLDER / filename).with_suffix('.yaml')
+        problems = yaml.load(filename.read_text(encoding=encoding))
         ret = []
         for _ in range(n):
             p = np.random.choice(problems)
             problems.remove(p)
-            p = cls.fromDict(p)
             ret.append(p)
         return ret
-
-    @staticmethod
-    def read(filename, encoding='utf-8'):
-        filename = (BANK_FOLDER / filename).with_suffix('.json')
-        if filename.is_file():
-            problems = json.load(filename.read_text(encoding=encoding))
-        else:
-            filename = filename.with_suffix('.yaml')
-            problems = yaml.load(filename.read_text(encoding=encoding))
-        return problems
 
     @classmethod
-    def get_all(cls, *args, **kwargs):
-        problems = OtherProblem.read(*args, **kwargs)
-        ret = []
-        for p in problems.values():
-            p = cls.fromDict(p)
-            ret.append(p)
-        return ret
+    def read_yaml(cls, filename, encoding='utf-8', *args, **kwargs):
+        filename = (BANK_FOLDER / filename).with_suffix('.yaml')
+        return yaml.load(filename.read_text(encoding=encoding))
 
 
 class TrueFalseProblem(OtherProblem):
 
-    @classmethod
-    def fromDict(cls, d):
-        if d['answer']:
-            d['parameter'].update({'answer':Command('true')})
+    def __setstate__(self, state):
+        super(TrueFalseProblem, self).__setstate__(state)
+        if 'answer' in state:
+            if isinstance(state['answer'], bool):
+                answer = 'true' if state['answer'] else 'false'
+            else:
+                answer = state['answer']
         else:
-            d['parameter'].update({'answer':Command('false')})
-
-        d['template'] += '~~{{answer}}'
-        return super(TrueFalseProblem, cls).fromDict(d)
+            answer = 'true'
+        self.parameter.update({'answer': Command(answer)})
 
 
 class ChoiceProblem(OtherProblem):
 
-    @classmethod
-    def fromDict(cls, d):
-        d['template'] += '~~{{answer}}\\\\\n'
-        choices = '~~'.join(['(%s) %s'%(k, v) for k, v in d['options'].items()])
-        d['template'] += choices
-        d['parameter'].update({'answer':Command('mypar', NoEscape(d['answer']))})
-        return super(ChoiceProblem, cls).fromDict(d)
-
+    def __setstate__(self, state):
+        choices = '~~'.join(['(%s) %s'%(k, v) for k, v in state['options'].items()])
+        self.template, self.parameter, answer = state['template'] + '~~{{answer}}\\\\\n' + choices, state.get('parameter', {}), state['answer']
+        self.solution = None
+        self.parameter.update({'answer':Command('mypar', answer)})
 
 
 class FillProblem(OtherProblem):
     mask = Command('autolenunderline', '')
 
-    @classmethod
-    def fromDict(cls, d):
-        d['parameter'].update({k:Command('autolenunderline', NoEscape(v)) for k, v in d['answer'].items()})
-        p = super(FillProblem, cls).fromDict(d)
-        p.masked = set(d['answer'].keys())
-        return p
+    def __setstate__(self, state):
+        self.template, self.parameter, answer = state['template'], state.get('parameter', {}), state.get('answer', {})
+        self.solution = None
+        self.masked = set(answer.keys()) 
+        self.parameter.update({k:Command('autolenunderline', NoEscape(v)) for k, v in answer.items()})
 
+
+# with open('bank/python_choice.yaml', encoding='utf-8') as fo:
+#     problem = yaml.load(fo)[0]

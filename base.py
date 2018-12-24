@@ -116,3 +116,5 @@ class BaseTemplate:
         '''
         for key in keys:
             self[key] = mask
+
+
