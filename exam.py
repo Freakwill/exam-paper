@@ -5,7 +5,7 @@ r"""myfile.exam
 To edit examination paper
 
 -------------------------------
-Path: examsystem\exam.py
+Path: examsystem/exam.py
 Author: William/2016-01-02
 """
 
@@ -26,16 +26,16 @@ from base import *
 
  
 class Solve(Environment):
-    '''solve environment
+    """solve environment
     Solve(data='the solution')
-    '''
+    """
     escape = False
     content_separator = "\\\\\n"
 
 
 class ExamPaper(pylatex_ext.XeDocument):
-    '''ExamPaper < Document
-    '''
+    """ExamPaper < Document
+    """
     def __init__(self, subject='', title=None, *args, **kwargs):
         """
         Argument:
@@ -52,9 +52,8 @@ class ExamPaper(pylatex_ext.XeDocument):
             title = '''浙江工业大学之江学院%s试卷'''%s.totex()
         self.title = title
 
-        self.usepackage('mathrsfs, amsfonts, amsmath, amssymb')
-        self.usepackage(('enumerate', 'analysis, algebra', 'exampaper'))
-        self.usepackage(('fancyhdr', 'geometry'))
+        self.usepackage(('mathrsfs, amsfonts, amsmath, amssymb', 'enumerate', 'analysis, algebra', 'exampaper',
+            'fancyhdr', 'geometry'))
 
         self.preamble.append(Command('geometry', 'left=3.3cm,right=3.3cm,top=2.3cm,foot=1.5cm'))
         self.preamble.append(Command('pagestyle', 'fancy'))
@@ -88,13 +87,17 @@ class ExamPaper(pylatex_ext.XeDocument):
 
     def make_head(self):
         self.append(Center(data=pylatex_ext.large(bold(NoEscape(self.title)))))
-        self.append(Command('noindent'))
-        self.append(r'二级学院：\hspace{6cm}专业名称：\hspace{6cm}\\课程名称：\hspace{6cm}课程代码：\hspace{6cm}\\主讲教师：\hspace{6cm}')
+        
+        table = Tabular('lclc')
+        table.escape = False
+        table.add_row(r'二级学院：&理学院&专业名称：&信计专业'.split('&'))
+        table.add_row(r'课程名称：&Python程序设计&课程代码：&10800570'.split('&'))
+        table.add_row(r'主讲教师：&宋丛威&&'.split('&'))
 
         table = Tabular('|c|c|c|c|c|c|')
         table.escape = False
         table.add_hline()
-        table.add_row('\sws{题号} \sws{一} \sws{二} \sws{三} \sws{四} \sws{总评}'.split())
+        table.add_row(r'\sws{题号} \sws{一} \sws{二} \sws{三} \sws{四} \sws{总评}'.split())
         table.add_hline()
         table.add_row((MultiRow(2, data='计分'), '', '', '', '', ''))
         table.add_empty_row()
